@@ -1,0 +1,662 @@
+@import url("https://fonts.googleapis.com/css2?family=Linden+Hill&family=Poppins:wght@400;500;600;700&family=Prata&family=Zilla+Slab:wght@400;500;600&display=swap");
+
+/* {
+font-family: 'Linden Hill', serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Prata', serif;
+font-family: 'Zilla Slab', serif;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+/* navbar styling */
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 30px;
+}
+#nav-bar {
+  background: #4c4c4b;
+  width: 100%;
+  padding: 15px 0;
+}
+
+
+
+#nav-bar .nav-logo a {
+  font-size: 2rem;
+  font-weight: 400;
+  border: white 0.2rem solid;
+  padding: 0 0.6rem;
+}
+.nav-links .menu li {
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 1rem;
+}
+.nav-links .menu li a.active {
+  border-bottom: white 0.2rem solid;
+}
+.nav-logo a,
+.nav-links .menu a {
+  color: white;
+}
+.nav-links .menu li a {
+  margin-left: 1rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 400;
+  transition: border-bottom 0.3s ease;
+}
+.nav-links .menu li a:hover {
+  border-bottom: white 0.2rem solid;
+}
+.menu-btn {
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+#nav-bar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* styling home */
+#home {
+  background: white;
+
+}
+#home .container {
+  display: grid;
+  grid-template-areas: "home-content home-img";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows:auto;
+  height: 100vh;
+  
+}
+
+#home .container .home-img {
+  grid-area: home-img;
+  background: url(./img/dezin-thiri1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  background-size: cover;
+}
+#home .container .home-content {
+  text-align: left;
+  grid-area: home-content;
+  margin-top: 30%; */
+}
+
+.home-content .text-1 {
+  font-size: 1.5rem;
+}
+.home-content .text-2 {
+  font-size: 2.5rem;
+}
+.home-content .text-3 {
+  font-size: 2rem;
+}
+
+.home-content .text-3 span {
+  color: crimson;
+  font-weight: 500;
+}
+
+.typing:after {
+  content: "";
+  border-right: 2px solid black;
+  animation: blink 0.6s infinite ease-in-out;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.home-content .btn{
+  padding: 8px 16px;
+  border: 2px solid white;
+  background: crimson;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  display: inline-block;
+}
+.home-content .btn:hover{
+opacity: 0.8;
+background: #262625;
+transition: all 0.3s ease;
+}
+
+/* mouse animation starte here */
+
+.mouse-container {
+  margin: auto;
+  width: 170px;
+  
+}
+
+.mouse-container .mouse {
+  position: absolute;
+  width: 26px; 
+  height: 46px;
+  margin: auto;
+  z-index: 1;
+  left: 49%;
+  bottom:20px;
+  border-radius: 18px;
+  border: 2px solid crimson;
+}
+.mouse-container .mouse .mouse-roller {
+  width: 4px;
+  height: 10px;
+  top: 10px;
+  position: absolute;
+  background: crimson;
+  left: 9px;
+  animation: mouse-scroll 1s infinite alternate;
+}
+
+@keyframes mouse-scroll {
+  to {
+    transform: translateY(8px);
+  }
+}
+
+
+/* About start here */
+#about{
+  background: #474747;
+}
+#about .container {
+  display: grid;
+  grid-template-areas: 
+  "about-me about-me"
+  "about-img about-content";
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows:10% auto;
+  height: 100vh;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+#about .container .title{
+  grid-area: about-me;
+  text-align: center;
+  padding: 10px 0;
+  color: white;
+  margin:auto 0;
+  position: relative;
+  margin-top: 0; 
+}
+#about .container .title::before{
+  content:"";
+  position: absolute;
+  width: 120px;
+  height: 3px;
+  background: white;
+  left: 50%;
+  bottom: 0px;
+  transform: translateX(-50%);
+}
+#about .container .title::after{
+  content:"Who am I";
+  position: absolute;
+  bottom: -9px;
+  color:crimson;
+  left: 50%;
+  font-size:15px;
+  background: #474243;
+  padding:0 3px;
+  transform: translateX(-50%);
+  
+}
+
+
+#about .container .about-img {
+  grid-area: about-img;
+  background-image: url(./img/dezin1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  width:100%;
+  height:100%; 
+
+}
+#about .container .about-content {
+  grid-area: about-content;
+  color:white;
+  padding: 3rem;
+  text-align: justify;
+  padding-top: 30%;
+  padding-right: 0px;
+  position: relative;
+ 
+}
+
+.about-content .cv{
+  background: rgb(216, 22, 61) ;
+  color: white;
+  padding: 10px 15px;
+  position: absolute;
+  right:0px;
+  bottom: 5rem;
+}
+.about-content .cv:hover{
+  background:rgb(216, 25, 80) ;
+}
+/* Skills start here */
+
+#skills .container .title{
+  grid-area: about-me;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: .3rem;
+  color:black;
+  margin:auto 0;
+  position: relative;
+ 
+}
+#skills .container .title::before{
+  content:"";
+  position: absolute;
+  width: 120px;
+  height: 3px;
+  background: black;
+  left: 50%;
+  bottom: 0px;
+  transform: translateX(-50%);
+}
+#skills .container .title::after{
+  content:"Who am I";
+  position: absolute;
+  bottom: -9px;
+  color:crimson;
+  left: 50%;
+  font-size:15px;
+  background: white;
+  padding:0 3px;
+  transform: translateX(-50%);
+  
+}
+.skills-container {
+  width: 70%;
+  margin:auto auto;
+  height: 100vh;
+}
+
+.skills-container .skill{
+
+  background:white;
+  border-radius: 5px;
+  border: rgb(219, 214, 214) .5px solid;
+ 
+}
+.skills-container .skill i {
+font-size:120px;
+}
+
+
+.skills-container .skill h2 {
+  background: #313131;
+  color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-weight: 100;
+  
+  
+  }
+.skills-container .skills{
+  display: grid;
+  grid-template-areas:
+  "skill-1 skill-2 skill-3 skill-4 skill-5"
+  ".skill-6 skill-7 skill-8.";
+  grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows:auto;
+  gap: 8px;
+  margin-top:15%;
+  text-align: center;
+}
+.skill-1{
+  grid-area:skill-1;
+  color: #e34f26;  
+}
+.skill-2{
+  grid-area:skill-2;
+  color: #264de4
+}
+.skill-3{
+  grid-area:skill-3;
+  color:#cc6699;
+}
+.skill-4{
+  grid-area:skill-4;
+  color:#8311F6
+}
+.skill-5{
+  grid-area:skill-5;
+  color: #f7df1e;
+}
+.skill-6{
+  grid-area:skill-6;
+  color: #f7df1e;
+}
+.skill-7{
+  grid-area:skill-7;
+}
+.skill-8{
+  grid-area:skill-8;
+  color: #00d8ff;
+}
+
+/* Project start here */
+#project{
+  background:#575757;
+}
+#project .container {
+  display: grid;
+  grid-template-areas: 
+  "projects-title projects-title projects-title projects-title"
+  "card-1 card-2 card-3 card-4";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows:10% 80%;
+  height: 100vh;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  gap: 1rem;
+}
+#project .container .project-card{
+  box-shadow:5px 5px 5px #262625;
+  border-radius: 4px;
+}
+#project .container .project-card {
+  background: rgb(236, 233, 233); 
+}
+#project .container .project-card:hover{
+  transform: translateY(-2px);
+  transition: all 0.2s;
+}
+.project-card .card-1{
+  grid-area: card-1;
+}
+.project-card .card-2{
+  grid-area: card-2;
+}
+.project-card .card-3{
+  grid-area: card-3;
+}
+.project-card .card-4{
+  grid-area: card-4;
+}
+#project .container .title{
+  grid-area: projects-title;
+  text-align: center;
+  /* padding: 10px 0; */
+  color: white;
+  margin:auto 0;
+  position: relative;
+  margin-top: 0; 
+}
+#project .container .title::before{
+  content:"";
+  position: absolute;
+  width: 120px;
+  height: 3px;
+  background: white;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+}
+#project .container .title::after{
+  content:"Who am I";
+  position: absolute;
+  bottom: -15px;
+  color:crimson;
+  left: 50%;
+  font-size:15px;
+  background: #575757;
+  padding:0 3px;
+  transform: translateX(-50%);
+  
+}
+.project-card-img{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:100%;
+  height:75%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+#project .container .card-1 .project-card-img{
+  background-image: url(./img/fruit3jpg.jpg); 
+}
+#project .container .card-2 .project-card-img{
+  background-image: url(./img/calculator.jpg);
+ 
+}
+#project .container .card-3 .project-card-img{
+  background-image: url(./img/fruit1.jpg);
+}
+#project .container .card-4 .project-card-img{
+  background-image: url(./img/fruit2jpg.jpg);
+}
+.project-card h2{
+  height: 15%;
+  padding: 1rem;
+  color:black;
+ 
+}
+.project-card a{
+  background: crimson;
+  padding: .5rem 1rem;
+  height: 15%;
+  margin-left: 1rem;
+  color:white;
+  border-radius: 4px;
+  font-weight: 500;
+ 
+}
+/* contact me start here */
+
+#contact .container .title{
+  grid-area: about-me;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: .3rem;
+  color:black;
+  margin:auto 0;
+  position: relative;
+ 
+}
+#contact .container .title::before{
+  content:"";
+  position: absolute;
+  width: 120px;
+  height: 3px;
+  background: black;
+  left: 50%;
+  bottom: 0px;
+  transform: translateX(-50%);
+}
+#contact .container .title::after{
+  content:"get in touch";
+  position: absolute;
+  bottom: -9px;
+  color:crimson;
+  left: 50%;
+  font-size:15px;
+  background: white;
+  padding:0 3px;
+  transform: translateX(-50%);
+  
+}
+.form-container{
+  display:grid;
+  grid-template-areas:"contact-info form-info";
+  grid-template-columns:1fr 1fr;
+  /* grid-template-rows: 20%; */
+  gap:1.5rem;
+  height: 100vh;
+  padding-top: 3rem;
+}
+
+.contact-info{
+  grid-area:contact-info;
+}
+.form-info{
+  grid-area:form-info;
+ padding-left: 3rem;
+
+}
+.form-info input{
+width:100%;
+padding: .7rem;
+border: 1px solid rgb(200, 200, 200);
+
+}
+.form-info .submit input{
+  background: crimson;
+  color: white;
+  outline: none;
+  border: none;
+  width: 25%;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif; 
+}
+
+.form-group .text-area{
+  width: 100%;
+}
+.form-info .text-area textarea{
+  border:1px solid rgb(200, 200, 200);
+  resize: vertical;
+ width: 100%;
+}
+.form-info ::placeholder{
+  color: crimson;
+  font-family: 'Poppins', sans-serif; 
+  font-size: 1rem;
+}
+.form-group-container{
+  display:flex;
+ 
+}
+.form-info .form-group{
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+
+}
+.form-info .group-2{
+ margin-left: 5px;
+
+}
+/* responsive start here */
+@media screen and (max-width:849px) {
+  .container {
+    padding: 0 20px;
+  }
+  .nav-links .menu li a {
+    margin-left: 0rem;
+  }
+  .home-content .text-1 {
+    font-size: 1rem;
+  }
+  .home-content .text-2 {
+    font-size: 1.5rem;
+  }
+  .home-content .text-3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width:768px){
+ 
+  #home .container .home-img {
+    width: 130%;
+  }
+  .container {
+    max-width: 768px;
+  }
+  .menu-btn{
+    display: block;
+    z-index: 999;
+  }
+  /* utilities when click menu-btn */
+  body.overflowHidden{
+    overflow: hidden;
+  }
+ 
+
+.nav-links .menu{
+  position: absolute;
+  background:#4c4c4b;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  clip-path: circle(100px at 120% -20%);
+  -webkit-clip-path: circle(100px at 120% -20%);
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+
+.nav-links .menu.open{
+  clip-path: circle(1500px at 120% -20%);
+  -webkit-clip-path: circle(1500px at 120% -20%);
+  pointer-events: all;
+  height: 100vh;
+  z-index: 999;
+   
+}
+
+/* open and close menu-btn */
+.fa-bars.Close:before {
+  content: "\f00d";
+}
+
+.menu li{
+  margin:3rem 0;
+}
+.nav-links .menu li a.active {
+  border: none;
+}
+.nav-links .menu li a:hover{
+  color: crimson;
+  border: none;
+}
+#home .container {
+  max-width:768px ;
+  
+}
+.typing.Noborder:after {
+  content: "";
+  border: none;}
+
+#home .container .home-img {
+  width: 100%;
+}
+
+}
