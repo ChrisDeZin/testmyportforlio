@@ -16,6 +16,7 @@ font-family: 'Zilla Slab', serif;
 
 body {
   font-family: "Poppins", sans-serif;
+overflow-x: hidden;
 }
 /* navbar styling */
 .container {
@@ -28,9 +29,6 @@ body {
   width: 100%;
   padding: 15px 0;
 }
-
-
-
 #nav-bar .nav-logo a {
   font-size: 2rem;
   font-weight: 400;
@@ -76,24 +74,23 @@ body {
   background: white;
 
 }
-#home .container {
+.home-container {
   display: grid;
   grid-template-areas: "home-content home-img";
   grid-template-columns: 1fr 1fr;
   grid-template-rows:auto;
-  height: 100vh;
-  
+  height: 100vh; 
 }
 
-#home .container .home-img {
+.home-container .home-img {
   grid-area: home-img;
-  background: url(./img/dezin-thiri1.png);
+  background: url(./img/dezin-thiri1.jpg);
   background-repeat: no-repeat;
   background-position: center;
   height: 100%;
   background-size: cover;
 }
-#home .container .home-content {
+.home-container .home-content {
   text-align: left;
   grid-area: home-content;
   margin-top: 30%; */
@@ -103,7 +100,7 @@ body {
   font-size: 1.5rem;
 }
 .home-content .text-2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
 }
 .home-content .text-3 {
   font-size: 2rem;
@@ -140,52 +137,39 @@ body {
   display: inline-block;
 }
 .home-content .btn:hover{
-opacity: 0.8;
-background: #262625;
-transition: all 0.3s ease;
+  opacity: 0.8;
+  background: #262625;
+  transition: all 0.3s ease;
 }
 
-/* mouse animation starte here */
 
-.mouse-container {
-  margin: auto;
-  width: 170px;
-  
-}
-
-.mouse-container .mouse {
-  position: absolute;
-  width: 26px; 
-  height: 46px;
-  margin: auto;
+#scrollToTop {
+  font-size: 3rem;
+  display:none;
+  color: crimson;
+  bottom: 1rem;
+  right: .4rem;
+  font-size: 2.5rem;
+  outline: none;
+  border: none;
+  background: none;
+  position:fixed;
   z-index: 1;
-  left: 49%;
-  bottom:20px;
-  border-radius: 18px;
-  border: 2px solid crimson;
 }
-.mouse-container .mouse .mouse-roller {
-  width: 4px;
-  height: 10px;
-  top: 10px;
-  position: absolute;
-  background: crimson;
-  left: 9px;
-  animation: mouse-scroll 1s infinite alternate;
+/* #scrollToTop.show{
+  opacity: 1; 
+} */
+#go-up #scrollToTop .fas:hover {
+  color: rgba(241, 21, 65, 0.685);
 }
 
-@keyframes mouse-scroll {
-  to {
-    transform: translateY(8px);
-  }
-}
 
 
 /* About start here */
 #about{
   background: #474747;
 }
-#about .container {
+.about-container {
   display: grid;
   grid-template-areas: 
   "about-me about-me"
@@ -197,7 +181,7 @@ transition: all 0.3s ease;
   padding-bottom: 2rem;
 }
 
-#about .container .title{
+.about-container .title{
   grid-area: about-me;
   text-align: center;
   padding: 10px 0;
@@ -206,7 +190,7 @@ transition: all 0.3s ease;
   position: relative;
   margin-top: 0; 
 }
-#about .container .title::before{
+.about-container .title::before{
   content:"";
   position: absolute;
   width: 120px;
@@ -216,7 +200,7 @@ transition: all 0.3s ease;
   bottom: 0px;
   transform: translateX(-50%);
 }
-#about .container .title::after{
+.about-container .title::after{
   content:"Who am I";
   position: absolute;
   bottom: -9px;
@@ -230,9 +214,9 @@ transition: all 0.3s ease;
 }
 
 
-#about .container .about-img {
+.about-container .about-img {
   grid-area: about-img;
-  background-image: url(./img/dezin1.jpg);
+  background-image: url(./img/dezin.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size:cover;
@@ -240,7 +224,7 @@ transition: all 0.3s ease;
   height:100%; 
 
 }
-#about .container .about-content {
+.about-container .about-content {
   grid-area: about-content;
   color:white;
   padding: 3rem;
@@ -298,30 +282,33 @@ transition: all 0.3s ease;
 }
 .skills-container {
   width: 70%;
-  margin:auto auto;
+  margin:0 auto;
   height: 100vh;
+}
+.skills-container fieldset{
+ padding: 1rem;
+ color:black;
+ border: 1px solid #dbdbdb;
+ font-size: 1.2rem
 }
 
 .skills-container .skill{
-
-  background:white;
-  border-radius: 5px;
-  border: rgb(219, 214, 214) .5px solid;
+ background:white;
+ border-radius: 5px;
+ border: rgb(219, 214, 214) .5px solid;
  
 }
 .skills-container .skill i {
 font-size:120px;
 }
 
-
 .skills-container .skill h2 {
   background: #313131;
   color: white;
+  font-size: 1.5rem;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   font-weight: 100;
-  
-  
   }
 .skills-container .skills{
   display: grid;
@@ -385,14 +372,10 @@ font-size:120px;
 #project .container .project-card{
   box-shadow:5px 5px 5px #262625;
   border-radius: 4px;
-}
-#project .container .project-card {
   background: rgb(236, 233, 233); 
 }
-#project .container .project-card:hover{
-  transform: translateY(-2px);
-  transition: all 0.2s;
-}
+
+
 .project-card .card-1{
   grid-area: card-1;
 }
@@ -513,26 +496,34 @@ font-size:120px;
   grid-template-areas:"contact-info form-info";
   grid-template-columns:1fr 1fr;
   /* grid-template-rows: 20%; */
-  gap:1.5rem;
+  gap:4rem;
   height: 100vh;
-  padding-top: 3rem;
+  padding-top: 5rem;
 }
-
 .contact-info{
   grid-area:contact-info;
 }
 .form-info{
   grid-area:form-info;
- padding-left: 3rem;
-
+  width:100%;
+}
+.form-info .input-group{
+  width: 100%;
+}
+.form-info .input-group{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:2%;
 }
 .form-info input{
-width:100%;
-padding: .7rem;
-border: 1px solid rgb(200, 200, 200);
-
+  width:49%;
+  padding: .7rem;
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid rgb(200, 200, 200);
 }
-.form-info .submit input{
+.form-info .submit{
+  /* done */
   background: crimson;
   color: white;
   outline: none;
@@ -543,40 +534,63 @@ border: 1px solid rgb(200, 200, 200);
   font-family: 'Poppins', sans-serif; 
 }
 
-.form-group .text-area{
-  width: 100%;
-}
-.form-info .text-area textarea{
+.form-info textarea{
   border:1px solid rgb(200, 200, 200);
+  width: 100%;
+  max-height:400px;
   resize: vertical;
- width: 100%;
+  outline: none;
+  font-size: 1rem;
+  padding: .7rem;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: .3rem;
+
 }
 .form-info ::placeholder{
   color: crimson;
   font-family: 'Poppins', sans-serif; 
+}
+
+.contact-details-container{
   font-size: 1rem;
+  padding-top: 1rem;
 }
-.form-group-container{
-  display:flex;
- 
+.contact-details-container a{
+  margin-right: 1rem;
+  font-size: 1.4rem;
+  color: crimson;
+  width: 1.5rem;
+  padding: 0;
 }
-.form-info .form-group{
-  width: 100%;
-  font-family: 'Poppins', sans-serif;
-
+.name >h4,.address >h4,.email >h4,.whatsapp>h4{
+  font-weight: 100;
 }
-.form-info .group-2{
- margin-left: 5px;
-
+.name >h2,.address >h2,.email >h2,.whatsapp>h2{
+  font-weight:600;
+  font-size: 1.2rem;
+}
+.name-container,.address-container,.email-container,.whatsapp-container{
+  display: flex;
+  padding: .4rem 0;
+  align-items: center;
+}
+footer{
+  display: flex;
+  background: #313131;
+  height: 80px;
+  text-align: center;
+  color: white;
 }
 /* responsive start here */
 @media screen and (max-width:849px) {
   .container {
     padding: 0 20px;
   }
-  .nav-links .menu li a {
+  .nav-links .menu li 
+  a {
     margin-left: 0rem;
   }
+
   .home-content .text-1 {
     font-size: 1rem;
   }
@@ -589,23 +603,39 @@ border: 1px solid rgb(200, 200, 200);
 }
 
 @media screen and (max-width:768px){
- 
-  #home .container .home-img {
+.home-container .home-content{
+  padding-top: 30%;
+}
+
+#home > div.container > div.home-content > a{
+  font-size: 1rem;
+}
+#about > div > div.about-content > a{
+  bottom:1px;
+  right: 2px;
+}
+.home-container .home-img {
     width: 130%;
   }
-  .container {
+.about-container .about-content {  
+    padding-top: 20%; 
+  }
+/* skill start here */
+.skills-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* skills end here */
+.container {
     max-width: 768px;
   }
-  .menu-btn{
+.menu-btn{
     display: block;
     z-index: 999;
-  }
+}
   /* utilities when click menu-btn */
-  body.overflowHidden{
-    overflow: hidden;
-  }
- 
-
+  
 .nav-links .menu{
   position: absolute;
   background:#4c4c4b;
@@ -621,15 +651,12 @@ border: 1px solid rgb(200, 200, 200);
   transition: all 0.5s ease;
   pointer-events: none;
 }
-
-
 .nav-links .menu.open{
   clip-path: circle(1500px at 120% -20%);
   -webkit-clip-path: circle(1500px at 120% -20%);
   pointer-events: all;
-  height: 100vh;
-  z-index: 999;
-   
+  height: 120vh;
+  z-index: 999; 
 }
 
 /* open and close menu-btn */
@@ -647,16 +674,261 @@ border: 1px solid rgb(200, 200, 200);
   color: crimson;
   border: none;
 }
-#home .container {
-  max-width:768px ;
-  
+.home-container {
+  max-width:768px ; 
 }
 .typing.Noborder:after {
   content: "";
   border: none;}
-
-#home .container .home-img {
+.home-container .home-img {
   width: 100%;
 }
+
+/* project start here */
+#project{
+  height:180vh;
+}
+
+#project .container {
+
+  grid-template-areas: 
+  "projects-title projects-title"
+  "card-1 card-2" 
+  "card-3 card-4";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows:10% 80% 80%;
+  max-height: 180%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  gap: 1rem;
+}
+#project .container .project-card{
+  box-shadow:5px 5px 5px #262625;
+  border-radius: 4px;
+  background: rgb(236, 233, 233); 
+}
+
+/* contact start here */
+.form-container{
+  gap:1px;
+  height: 100vh;
+  padding-top: 5rem;
+}
+.form-info .input-group{
+  width: 100%;
+  display: block;
+}
+.form-info input{
+  width:100%;
+  margin:8px 0; 
+}
+.form-info .submit{ 
+width: 40%;
+}
+.contact-details-container a{
+  font-size: 1.5rem;
+}
+.name >h2,.address >h2,.email >h2,.whatsapp>h2{
+  font-size: 1rem;
+}
+.name-container,.address-container,.email-container,.whatsapp-container{
+ padding: .2rem 0; 
+}
+
+@media screen and (max-width:425px) {
+/* when menu click */
+  .nav-links .menu.open{
+    height: 120vh;
+  }
+  /* home start here */
+  #home{
+    background:url("https://images.pexels.com/photos/3137076/pexels-photo-3137076.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  }
+.home-container {
+  display: grid;
+  grid-template-areas: "home-content";
+  grid-template-columns: 2fr;
+}
+
+
+.home-container .home-content {
+  text-align: left;
+  grid-area: home-content;
+  text-align: center;
+  
+}
+
+.home-content .text-1 {
+  font-size: 1rem;
+}
+.home-content .text-2 {
+  font-size: 1.5rem;
+}
+.home-content .text-3 {
+  font-size: 1rem;
+}
+
+.home-content .btn{
+  font-size: 1rem;
+}
+.home-content .btn{
+  border-radius: 0px;
+  border: none;
+  outline: none;
+}
+
+  /* sgfsjdgfdsfgsk */
+.about-container {
+ padding-top:2rem;
+  padding-bottom: 1rem;
+}
+
+.about-container .about-img {
+ height:95%; 
+}
+.about-container .about-content {
+  padding: 1rem;
+  height: 95%;
+  padding-top: 30%;
+  padding-right: 0px;
+  
+}
+
+.about-content .cv{
+  right:0px;
+  bottom: 0rem;
+}
+
+/* skills start here */
+
+#skills .container .title{
+  grid-area: about-me;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: .3rem;
+  color:black;
+  margin:auto 0;
+  position: relative;
+ 
+}
+#skills .container .title::before{
+  content:"";
+  position: absolute;
+  width: 120px;
+  height: 3px;
+  background: black;
+  left: 50%;
+  bottom: 0px;
+  transform: translateX(-50%);
+}
+#skills .container .title::after{
+  content:"Who am I";
+  position: absolute;
+  bottom: -9px;
+  color:crimson;
+  left: 50%;
+  font-size:15px;
+  background: white;
+  padding:0 3px;
+  transform: translateX(-50%);
+  
+}
+.skills-container {
+  width: 100%;
+ margin-top: 3rem;
+}
+.skills-container fieldset{
+ padding: 1rem;
+ color:black;
+ border: 1px solid #dbdbdb;
+ font-size: 1rem;
+ text-align: center;
+
+}
+
+.skills-container .skill{
+ 
+ width: auto;
+ 
+ 
+}
+.skills-container .skill i {
+font-size:50px;
+}
+
+.skills-container .skill h2 {
+  
+  font-size: 10px;
+  font-weight: 100;
+  }
+.skills-container .skills{
+  gap: 5px;
+  margin:15% 0;
+  
+}
+/* project start here */
+#project{
+  height:1800px;
+}
+#project .container {
+  display: grid;
+  grid-template-areas:
+  "projects-title"
+  "card-1" 
+  "card-2" 
+  "card-3" 
+  "card-4";
+  grid-template-columns: 1fr;
+  grid-template-rows:10% 100% 100% 100% 100%;
+  
+}
+/* contact start here */
+
+
+.form-container{
+  display:grid;
+  grid-template-areas:
+  "contact-info"
+  "form-info";
+  grid-template-columns:1fr;
+  /* grid-template-rows: 20%; */
+  gap:1rem;
+  height: 220vh;
+  padding-top: 2rem;
+
+}
+.contact-info{
+  grid-area:contact-info;
+  
+}
+.form-info{
+  grid-area:form-info;
+  width:100%;
+ 
+}
+.form-info .input-group{
+  width: 100%;
+}
+.form-info .input-group{
+  
+  margin-bottom:2%;
+  
+}
+.form-info input{
+  width:49%;
+
+}
+.form-info .submit{
+  width: 40%;
+ 
+}
+
+
+
+
+
+
+
+
 
 }

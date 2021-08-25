@@ -44,6 +44,7 @@ $(document).ready(function () {
   // smooth scroll when click nav-links
   $(".nav-links li a").click(function (e) {
     e.preventDefault();
+
     if (this.hash !== "") {
       const hash = this.hash;
       $("html,body").animate(
@@ -60,7 +61,6 @@ $(document).ready(function () {
   $(".menu-btn").click(function (e) {
     e.preventDefault();
     $(".menu").toggleClass("open");
-    $("body").toggleClass("overflowHidden");
     $(".typing").addClass("Noborder");
     $(".fa-bars").toggleClass("Close");
     $(".menu li a").click(function () {
@@ -71,3 +71,25 @@ $(document).ready(function () {
     });
   });
 });
+
+//show go-to-top button after scrolling 20px from top
+window.onscroll = function () {
+  scrollFunction();
+};
+const scrollButton = document.querySelector("#scrollToTop");
+
+function scrollFunction() {
+  document.body.scrollTop >20 || document.documentElement.scrollTop > 20
+    ? (scrollButton.style.display = "block")
+    : (scrollButton.style.display = "none");
+}
+
+// when click, go-to-top
+function topFunction() {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+}
+
