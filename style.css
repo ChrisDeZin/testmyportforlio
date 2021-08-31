@@ -1,10 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Linden+Hill&family=Poppins:wght@400;500;600;700&family=Prata&family=Zilla+Slab:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400;1,500&family=Hina+Mincho&display=swap');
+
 
 /* {
 font-family: 'Linden Hill', serif;
 font-family: 'Poppins', sans-serif;
 font-family: 'Prata', serif;
 font-family: 'Zilla Slab', serif;
+font-family: 'Cormorant Garamond', serif;
+
 } */
 
 * {
@@ -16,7 +20,7 @@ font-family: 'Zilla Slab', serif;
 
 body {
 	font-family: "Poppins", sans-serif;
-	/* overflow-x: hidden; */
+	overflow-x: hidden;
 }
 
 
@@ -111,26 +115,16 @@ body {
 	margin-top: 30%;
 }
 
-.home-content .text-1 {
-	font-size: 1.5rem;
 
-}
 
-.text-2,
+
 .text-3 {
 	font-size: 1.5rem;
 	font-weight: 100;
 }
 
-.hello {
-	width: 2rem;
-	height: 2rem;
-	padding: 0;
-}
 
-.home-content .text-2 {
-	font-size: 2.2rem;
-}
+
 
 .home-content .text-3 {
 	font-size: 2rem;
@@ -266,9 +260,18 @@ body {
 	color: white;
 	padding: 3rem;
 	text-align: justify;
-	padding-top: 30%;
+	padding-top: 15%;
 	padding-right: 0px;
 	position: relative;
+}
+
+.about-container .about-content p {
+	font-weight: 100;
+	text-indent: 5rem;
+	line-height: 40px;
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 20px;
+
 }
 
 .about-content .cv {
@@ -277,7 +280,7 @@ body {
 	padding: 10px 15px;
 	position: absolute;
 	right: 0px;
-	bottom: 5rem;
+	bottom: 1px;
 }
 
 .about-content .cv:hover {
@@ -779,6 +782,7 @@ body {
 .email>h4,
 .whatsapp>h4 {
 	font-weight: 100;
+
 }
 
 .name>h2,
@@ -818,13 +822,6 @@ footer {
 		margin-left: 0rem;
 	}
 
-	.home-content .text-1 {
-		font-size: 1rem;
-	}
-
-	.home-content .text-2 {
-		font-size: 1.5rem;
-	}
 
 	.home-content .text-3 {
 		font-size: 1.2rem;
@@ -844,7 +841,7 @@ footer {
 
 
 	.home-container .home-content {
-		padding-top: 30%;
+		padding-top: 50%;
 	}
 
 	#home>div.container>div.home-content>a {
@@ -870,15 +867,22 @@ footer {
 
 	.about-container .about-content {
 
-		padding-top: 30%;
+		padding-top: 25%;
 		padding-right: 0px;
 		padding-left: 0;
+	}
+
+	.about-container .about-content p {
+		font-weight: 100;
+		text-indent: 5rem;
+		line-height: 30px;
+		font-family: 'Cormorant Garamond', serif;
 	}
 
 	/* skill start here */
 	.skills-container {
 		width: 100%;
-		/* margin: 0 auto; */
+		padding: 4rem 0;
 	}
 
 	/* skills end here */
@@ -970,7 +974,7 @@ footer {
 	.form-container {
 		gap: 1px;
 		height: 100%;
-		padding-top: 5rem;
+		padding-top: 2rem;
 	}
 
 	.form-info .input-group {
@@ -1036,6 +1040,11 @@ footer {
 			background-repeat: no-repeat;
 		}
 
+		.typing {
+			font-weight: 100;
+			font-size: 1.1rem;
+		}
+
 		.home-container {
 			display: grid;
 			grid-template-areas: "home-content";
@@ -1043,21 +1052,12 @@ footer {
 		}
 
 		.home-container .home-content {
-			text-align: left;
+
 			grid-area: home-content;
 			text-align: center;
+			padding:0;
+			margin:50% 0;
 		}
-
-		.home-content .text-1 {
-			font-size: 1rem;
-		}
-
-		.home-content .text-2 {
-			font-size: 1.5rem;
-		}
-
-
-
 		.home-content .btn {
 			border-radius: 0px;
 			border: none;
@@ -1074,9 +1074,17 @@ footer {
 		.about-container .about-content {
 			padding: 1rem;
 			height: 95%;
-			padding-top: 30%;
+			padding-top: 10%;
 			padding-right: 0px;
 			padding-left: 0;
+		}
+
+		.about-container .about-content p {
+			font-weight: 100;
+			line-height: 20px;
+			font-family: 'Cormorant Garamond', serif;
+			font-size: 17px;
+
 		}
 
 		.about-content .cv {
@@ -1118,6 +1126,11 @@ footer {
 			border-bottom-right-radius: 5px;
 		}
 
+		.skills-container {
+
+			padding: 1rem 0;
+		}
+
 		.fieldset-1,
 		.fieldset-2,
 		.fieldset-3 {
@@ -1146,6 +1159,25 @@ footer {
 			grid-template-areas: "projects-title projects-title""card-1 card-2""card-3 card-4";
 			grid-template-columns: 1fr 1fr;
 			grid-template-rows: 10% 50% 50%;
+		}
+
+		.project-container .title {
+			padding-top: 0px;
+			margin-top: 1px;
+			z-index: 10;
+		}
+
+		.project-container .title::after {
+			bottom: -13px;
+		}
+
+		.project-container .title::before {
+			bottom: -4px;
+		}
+
+		.project-container {
+			padding: 1.5rem 0;
+
 		}
 
 		.project-card {
@@ -1190,7 +1222,7 @@ footer {
 			grid-template-areas: "contact-info""form-info";
 			grid-template-columns: 1fr;
 			/* grid-template-rows: 20%; */
-			gap: 4rem;
+			gap: 2rem;
 			height: 100%;
 			padding: 2rem 0;
 		}
@@ -1217,7 +1249,7 @@ footer {
 		}
 
 		.form-info .submit {
-			width: 40%;
+			width: 9rem;
 		}
 	}
 }

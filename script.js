@@ -54,7 +54,14 @@ $(document).ready(function() {
             );
         }
     });
-
+//smmoth scroll when click "read more" link
+$(".home-container .btn").click(function(e){
+    e.preventDefault();
+    if(this.hash !==""){
+        const hash=this.hash;
+        $("html,body").animate({scrollTop:$(hash).offset().top},800);
+    }
+})
     // clip path when click menu-btn
 
     $(".menu-btn").click(function(e) {

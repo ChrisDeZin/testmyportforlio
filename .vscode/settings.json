@@ -1,5 +1,47 @@
 {
   "liveServer.settings.port": 5501,
   "editor.linkedEditing": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "beautify.config": "",
+  "beautify.ignore": "",
+  "beautify.language": {
+
+    "js": {
+      "type": [
+        "javascript",
+        "json",
+        "jsonc"
+      ],
+      "filename": [
+        ".jshintrc",
+        ".jsbeautifyrc"
+      ]
+    },
+    "css": [
+      "css",
+      "less",
+      "scss"
+    ],
+    "html": [
+      "htm",
+      "html"
+    ]
+  },
+  "[css]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[html]": {
+
+    // "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "prettier.requireConfig": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.embeddedLanguageFormatting": "off",
+  "files.trimTrailingWhitespace": true,
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "editor.useTabStops": false,
+
 }
